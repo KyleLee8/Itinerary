@@ -20,6 +20,18 @@ struct ItineraryView: View {
                     }
                     .padding()
                 }
+                
+                // Clear button
+                Button(action: {
+                    flightDataModel.clearFlights() // Call the method to clear flights
+                }) {
+                    Text("Clear Itinerary")
+                        .foregroundColor(.red)
+                        .padding()
+                        .background(Color.gray.opacity(0.2))
+                        .cornerRadius(5)
+                }
+                .padding(.bottom) // Add some padding to the bottom
             }
         }
         .navigationTitle("Your Itinerary")

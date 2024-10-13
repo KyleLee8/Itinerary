@@ -25,6 +25,13 @@ class FlightDataModel: ObservableObject {
         print("Added \(flight.airline) flight to itinerary!") // Log the addition
     }
 
+    // Function to clear saved flights
+    func clearFlights() {
+        savedFlights.removeAll() // Clear the saved flights array
+        saveFlights() // Save the changes to UserDefaults
+        print("Cleared all flights from itinerary!") // Log the clearing
+    }
+
     // Save flights to UserDefaults
     private func saveFlights() {
         if let encoded = try? JSONEncoder().encode(savedFlights) {

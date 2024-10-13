@@ -10,7 +10,7 @@ import SwiftUI
 
 struct CountrySelectionView: View {
     let countries = ["Greece", "Italy", "Japan"]
-    let countryImages = ["greece.jpg", "italy.jpg", "japan.jpeg"] // Use the name of image assets in your app
+    let countryImages = ["greece", "italy", "japan"] // Removed file extensions
     
     var body: some View {
         NavigationView {
@@ -19,6 +19,7 @@ struct CountrySelectionView: View {
                     HStack {
                         Image(countryImages[index])
                             .resizable()
+                            .scaledToFit() // Maintain aspect ratio
                             .frame(width: 50, height: 50)
                             .clipShape(Circle())
                         Text(countries[index])
